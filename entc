@@ -1,0 +1,851 @@
+Experiment No 1
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var base = parseInt(prompt("Enter the base: "));
+        var height = parseInt(prompt("Enter the height: "));
+
+        //Calculating the area
+        var area = (base * height) / 2;
+
+        //Display Output
+
+        document.writeln("Base: " + base);
+        document.writeln("<br>");
+        document.writeln("Height: " + height);
+        document.writeln("<br>");
+        document.writeln("The area of the triangle is " + area);
+
+    </script>
+</body>
+
+</html>
+
+
+
+ 
+Experiment 2
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // program to generate a multiplication table
+
+        // take input from the user
+        const number = parseInt(prompt('Enter an integer: '));
+
+        //creating a multiplication table
+        for (let i = 1; i <= 10; i++) {
+
+            // multiply i with number
+            const result = i * number;
+
+            // display the result
+
+            document.write(`${number} * ${i} = ${result} <br>`);
+
+        }
+
+    </script>
+</body>
+
+</html>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Experiment 3a
+	<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function reverseString(str) {
+
+            // empty string
+            let newString = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+                newString += str[i];
+            }
+            return newString;
+        }
+
+        // take input from the user
+        const string = prompt('Enter a string: ');
+
+        const result = reverseString(string);
+        document.write(result);
+
+    </script>
+</body>
+
+</html>
+
+ 
+
+
+
+Experiment 3b
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const string = 'Mr Red has a red house and a red car';
+
+        // replace the characters
+        const newText = string.replace('red', 'blue');
+
+        // display the result
+        document.write(newText);
+    </script>
+</body>
+
+</html>
+
+ 	
+
+
+
+
+
+
+
+
+Experiment 3c
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // function that check str is palindrome or not
+        function check_palindrome(str) {
+            let j = str.length - 1;
+            for (let i = 0; i < j / 2; i++) {
+                let x = str[i];//forward character
+                let y = str[j - i];//backward character
+                if (x != y) {
+                    // return false if string not match
+                    return false;
+                }
+            }
+            /// return true if string is palindrome
+            return true;
+        }
+
+        //function that print output is string is palindrome
+        function is_palindrome(str) {
+            let ans = check_palindrome(str);
+            //condition checking ans is true or not
+            if (ans == true) {
+                document.write("passed string is palindrome <br>");
+            }
+            else {
+                document.write("passed string not a palindrome");
+            }
+        }
+        // test variable
+        let test = "racecar";
+        is_palindrome(test);
+
+    </script>
+</body>
+
+</html>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Experiment 4a
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const string1 = 'JavaScript Program';
+        const string2 = 'javascript program';
+
+        // compare both strings
+        const result = string1.toUpperCase() === string2.toUpperCase();
+
+        if (result) {
+            document.write('The strings are similar.');
+        } else {
+            document.write('The strings are not similar.');
+        }
+
+    </script>
+</body>
+
+</html>
+
+
+
+ 
+
+
+
+Experiment 4b
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Method 2: JS String Comparison Using RegEx
+
+        const string1 = 'JavaScript Program';
+        const string2 = 'javascript program';
+
+        // create regex
+        const pattern = new RegExp(string1, "gi");
+
+        // compare the stings
+        const result = pattern.test(string2)
+
+        if (result) {
+            document.write('The strings are similar.');
+        } else {
+            document.write('The strings are not similar.');
+        }
+
+    </script>
+</body>
+
+</html>
+
+
+ 
+
+
+Experiment 4c
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Method 3: Using localeCompare() [Recommended Method]
+
+        // program to perform case insensitive string comparison
+
+        const string1 = 'JavaScript Program';
+        const string2 = 'javascript program';
+
+        const result = string1.localeCompare(string2, undefined, { sensitivity: 'base' });
+
+        if (result == 0) {
+            document.write('The strings are similar.');
+        } else {
+            document.write('The strings are not similar.');
+        }
+
+    </script>
+</body>
+
+</html>
+
+ 
+
+
+
+Experiment 5
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Experiment 5: Program to create a countdown timer
+
+        // time to countdown from (in milliseconds)
+        let countDownDate = new Date().getTime() + 24 * 60 * 60 * 1000;
+
+        // countdown timer
+        let x = setInterval(function () {
+
+            // get today's date and time in milliseconds
+            let now = new Date().getTime();
+
+            // find the interval between now and the countdown time
+            let timeLeft = countDownDate - now;
+
+            // time calculations for days, hours, minutes and seconds
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((timeLeft / 1000 / 60) % 60);
+            const seconds = Math.floor((timeLeft / 1000) % 60);
+
+            // display the result in the element with id="demo"
+            document.write(days + "d " + hours + "h " + minutes + "m " + seconds + "s <br>");
+
+            // clearing countdown when complete
+            if (timeLeft < 0) {
+                clearInterval(x);
+                document.write('CountDown Finished');
+            }
+        }, 2000);
+
+    </script>
+</body>
+
+</html>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Experiment 6a
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Program 6a: Program to remove specific element from Array Object
+
+        function remove_array_element(array, n) {
+            var index = array.indexOf(n);
+            if (index > -1) {
+                array.splice(index, 1);
+            }
+            return array;
+        }
+
+        document.write(remove_array_element([2, 5, 9, 6], 5));
+
+    </script>
+</body>
+
+</html>
+
+
+ 
+
+
+
+
+
+
+Experiment 6b
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Exp 6 b: program to check if an array contains a specified value
+
+        const array = ['you', 'will', 'learn', 'javascript'];
+
+        const hasValue = array.includes('javascript');
+
+        // check the condition
+        if (hasValue) {
+            document.write('Array contains a value.');
+        } else {
+            document.write('Array does not contain a value.');
+        }
+    </script>
+</body>
+
+</html>
+
+
+ 
+
+
+
+Experiment 6c
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //Exp 6c: Program to empty an array
+        //Method 1
+
+        function emptyArray(arr) {
+
+            // substituting new array
+            arr = [];
+
+            return arr;
+        }
+
+        const array = [1, 2, 3];
+        document.write(array);
+
+        // call the function
+        const result = emptyArray(array);
+        document.write(result);
+    </script>
+</body>
+
+</html>
+
+ 
+
+
+Experiment 7a
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let myArray = [1, 2, 3];
+        document.write("myArray "+myArray+ '<br>');
+
+        let myObject = { name:"omkar" };
+        document.write("myObject "+myObject+ '<br>');
+
+        myArray.push(myObject);
+        document.write("New Array "+myArray+ '<br>');
+
+        if (Array.isArray(myObject)) {
+            document.write('The object is an array. <br>');
+        } else {
+            document.write('The object is not an array. <br>');
+        }
+
+        if (myArray.includes(myObject)) {
+            document.write('The array contains the object. <br>');
+        } else {
+            document.write('The array does not contain the object. <br>');
+        }
+
+        if (Array.isArray(myArray)) {
+            document.write('myArray is an array. <br>');
+        } else {
+            document.write('myArray is not an array. <br>');
+        }
+
+    </script>
+</body>
+
+</html>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Experiment 7b
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Adding object in array</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: green">Geeksforgeeks</h1>
+    <p>Click the button to add new elements to the array.</p>
+
+    <button onclick="spliceFunction()">Add elements</button>
+
+    <p id="geeks"></p>
+
+    <script>
+        var list = ["HTML", "CSS", "JavaScript"];
+        document.getElementById("geeks").innerHTML = list;
+
+        function spliceFunction() {
+            list.splice(2,0,"Angular", "SQL", );
+            document.getElementById("geeks").innerHTML = list;
+        }
+    </script>
+
+</body>
+
+</html>         
+
+
+
+ 
+Experiment No 8a
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Union Operation</title>
+</head>
+<body>
+    <h1>Set Union Operation</h1>
+    <p id="output"></p>
+
+    <script>
+        // Define two sets as arrays
+        var set1 = [1, 2, 3, 4];
+        var set2 = [3, 4, 5, 6];
+
+        // Function to perform the union operation on two sets
+        function union(setA, setB) {
+            var result = [...new Set([...setA, ...setB])];
+            return result;
+        }
+
+        // Perform the union operation
+        var unionResult = union(set1, set2);
+
+        // Display the results on the webpage
+        var outputElement = document.getElementById("output");
+        outputElement.innerHTML = "Union of set1 and set2: " + JSON.stringify(unionResult);
+    </script>
+</body>
+</html>
+
+
+
+
+ 
+
+
+Experiment 8b
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Intersection</title>
+</head>
+<body>
+    <h1>Set Intersection</h1>
+    <p id="output"></p>
+
+    <script>
+        // Function to perform set intersection
+        function intersection(setA, setB) {
+            return new Set([...setA].filter(x => setB.has(x)));
+        }
+
+        // Define two sets
+        var setA = new Set([1, 2, 3, 4, 5]);
+        var setB = new Set([3, 4, 5, 6, 7]);
+
+        // Perform intersection
+        var resultSet = intersection(setA, setB);
+
+        // Display the results on the webpage
+        var outputElement = document.getElementById("output");
+        outputElement.innerHTML = "Set A: " + [...setA] + "<br>";
+        outputElement.innerHTML += "Set B: " + [...setB] + "<br>";
+        outputElement.innerHTML += "Intersection: " + [...resultSet];
+    </script>
+</body>
+</html>
+
+
+ 
+
+Experiment 8c
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Set Difference Operation</title>
+</head>
+<body>
+    <h1>Set Difference Operation</h1>
+    <p id="output"></p>
+
+    <script>
+        // Define two sets (arrays) a and b
+        var setA = [1, 2, 3, 4, 5];
+        var setB = [3, 4, 6, 7, 8];
+
+        // Function to perform set difference operation
+        function setDifference(setA, setB) {
+            return setA.filter(item => !setB.includes(item));
+        }
+
+        // Perform the set difference operation
+        var differenceResult = setDifference(setA, setB);
+
+        // Display the results on the webpage
+        var outputElement = document.getElementById("output");
+        outputElement.innerHTML = "Set A: " + JSON.stringify(setA) + "<br>";
+        outputElement.innerHTML += "Set B: " + JSON.stringify(setB) + "<br>";
+        outputElement.innerHTML += "Set Difference (A - B): " + JSON.stringify(differenceResult);
+    </script>
+</body>
+</html>
+
+
+
+ 
+Experiment 9
+HTML File
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment-9</title>
+
+    <script src="Exp9.js"> 
+    </script>
+</head>
+<body>
+    <h1 id="head1" onmouseover="changeColor1()" onmouseout="changeColor2()"> Experiment-9</h1>
+    <h2> JavaScript program to change background color of Webpage On mouse over event</h2>
+    <p>We are using mousever Event to Change the Background Color</p>
+    
+    
+</body>
+</html>
+
+JavaScript File
+function changeColor1() {
+    document.body.style.backgroundColor = "red";
+}
+function changeColor2() {
+    document.body.style.backgroundColor = "yellow";
+}
+
+ 
+
+Experiment 10
+HTML File
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="/Exp10a.js"></script>
+
+</head>
+<body>
+    <h1>Experiment-10</h1>
+    <h2>Form Validation Example</h2>
+    <br>
+    <h1>Sign Up Form</h1>
+    <form name="myForm"  action="/thankyou.html" onsubmit="return validate()" >
+        <label for="fname"> First name</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter First Name" required>
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname" placeholder="Enter Last Name" >
+        <br>
+        <br>
+        <label for="usremail">Email</label>
+        <input type="email" id="usremail" name="usremail" placeholder="Enter Email here" >
+        <label for="usrpassword">Password</label>
+        <input type="password" id="usrpassword" name="usrpassword" placeholder="Enter Password" >
+        <br>
+        <br>
+        <p>Gender ?</p>
+        <label for="male"> Male</label>
+        <input type="radio" id="male" name="option">
+        <label for="female"> Female </label>
+        <input type="radio" id="female" name="option">
+        <p></p>
+        
+        <label for="usrmobile">Mobile Number</label>
+        <input type="text" id="usrmobile" name="usrmobile" placeholder="Mobile Number" required>
+        <p></p>
+        <input type="submit" name="" id="" value="submit">
+    </form>
+
+</body>
+</html>
+JavaScript File
+function validate() {
+    var firstName = document.myForm.fname.value;
+    var lastName = document.myForm.lname.value;
+    var userpassword = document.myForm.usrpassword.value;
+    var usrmobile = document.myForm.usrmobile.value;
+    
+    console.log(firstName);
+    console.log(lastName);
+    console.log(userpassword);
+    console.log(usrmobile);
+
+    if (firstName == null || firstName == "" || firstName.length<3 ) {
+        alert("First Name can't be blank or Less than 3 Charecter");
+        document.myForm.fname.focus();
+        return false;
+    }
+    if (lastName == null || lastName == "") {
+        alert("Last Name can't be blank");
+        document.myForm.lname.focus();
+        return false;
+    }
+    if (userpassword.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        document.myForm.usrpassword.focus();
+        return false;
+    }
+    if (isNaN(usrmobile)) {
+        alert("Enter Numeric value only");
+        document.myForm.usrmobile.focus();
+        return false;
+    }
+    return true;
+    
+}
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+ 
